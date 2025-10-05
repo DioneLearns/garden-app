@@ -1,28 +1,31 @@
-def get_user_input():
-    season = input("Enter the current season (summer/winter): ").lower()
-    plant_type = input("Enter your plant type (flower/vegetable): ").lower()
-    return season, plant_type
+# Hardcoded values for the season and plant type
+season = input("Enter the current season (summer/winter): ").lower() #updated
+plant_type = input("Enter your plant type (flower/vegetable): ").lower() #updated
 
-def get_season_advice(season):
-    if season == "summer":
-        return "Water your plants regularly and provide some shade.\n"
-    elif season == "winter":
-        return "Protect your plants from frost with covers.\n"
-    else:
-        return "No advice for this season.\n"
+# Variable to hold gardening advice
+advice = ""
 
-def get_plant_advice(plant_type):
-    if plant_type == "flower":
-        return "Use fertiliser to encourage blooms."
-    elif plant_type == "vegetable":
-        return "Keep an eye out for pests!"
-    else:
-        return "No advice for this type of plant."
+# Determine advice based on the season
+if season == "summer":
+    advice += "Water your plants regularly and provide some shade.\n"
+elif season == "winter":
+    advice += "Protect your plants from frost with covers.\n"
+else:
+    advice += "No advice for this season.\n"
 
-def main():
-    season, plant_type = get_user_input()
-    advice = get_season_advice(season) + get_plant_advice(plant_type)
-    print(advice)
+# Determine advice based on the plant type
+if plant_type == "flower":
+    advice += "Use fertiliser to encourage blooms."
+elif plant_type == "vegetable":
+    advice += "Keep an eye out for pests!"
+else:
+    advice += "No advice for this type of plant."
 
-if __name__ == "__main__":
-    main()
+# Print the generated advice
+print(advice)
+
+# TODO: Examples of possible features to add:
+# - Add detailed comments explaining each block of code.
+# - Refactor the code into functions for better readability and modularity.
+# - Store advice in a dictionary for multiple plants and seasons.
+# - Recommend plants based on the entered season.
